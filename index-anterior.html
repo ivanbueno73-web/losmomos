@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Musical - LOSMONOS Rock • Indie • Pop | Cantabria</title>
+
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Metadatos para redes sociales -->
+    <meta property="og:title" content=" LOSMONOS • Propuesta Musical">
+    <meta property="og:description" content="Rock • Indie • Pop | Cantabria">
+    <meta property="og:url" content="https://losmonosmusic.com">
+    <meta property="og:image" content="https://losmonos.ct.ws/imagen_recortada.jpg">
+
+    <!-- Color principal del navegador -->
+    <meta name="theme-color" content="#FF4500">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/lemonmilk');
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-family: 'Lemon/Milk light', sans-serif;
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #cccccc;
+            letter-spacing: 1px;
+        }
+        .hero-image {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            border-bottom: 4px solid #FF4500;
+            line-height: 0;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .content {
+            /* He reducido el padding inferior de 40px a 20px */
+            padding: 40px 30px 20px 30px;
+        }
+        .intro-text {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        .highlight-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #FF4500;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #555;
+        }
+        .video-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #15411d;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 5px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn:hover {
+            background-color: #277736;
+        }
+        .btn-insta {
+            background-color: #14293e;
+        }
+        .btn-insta:hover {
+            background-color: #356798;
+        }
+
+        /* --- ESTILOS DEL FOOTER ELEGANTE --- */
+        .footer {
+            background-color: #111111;
+            padding: 40px 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #888888;
+            border-top: 4px solid #FF4500;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 12px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 22px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #FF4500;
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            width: 80%;
+            margin: 25px auto;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-item {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-item:hover {
+            color: #ffffff;
+        }
+
+        .contact-item i {
+            color: #FF4500;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container { background-color: #1a1a1a; color: #e0e0e0; }
+            .header { background-color: #000; }
+            .content { color: #e0e0e0; }
+            .highlight-box { background-color: #2c2a20; border-left-color: #ffcc00; color: #e0e0e0; }
+        }
+
+        .video-container {
+            width: 100%;
+            margin: 25px 0;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #000;
+            line-height: 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>LOSMONOS</h1>
+            <p>Rock &bull; Indie &bull; Pop | Cantabria</p>
+        </div>
+
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+             <img src="https://losmonos.ct.ws/imagen_recortada.jpg" alt="Imagén del grupo musical LOSMONOS" onerror="this.src='https://placehold.co/600x300/000000/FF4500?text=LOSMONOS+MUSIC';">
+        </div>
+
+        <!-- BODY CONTENT -->
+        <div class="content">
+            <p><strong>Hola, equipo de programación / producción:</strong></p>
+
+            <p class="intro-text">
+                Os escribimos para presentaros el regreso de <strong>LOSMONOS</strong>, la banda cántabra que vuelve a los escenarios con una propuesta cargada de energía, buenas melodías y decibelios.
+            </p>
+
+            <div class="highlight-box">
+                "Una mezcla potente de Rock, Indie y Pop diseñada para hacer un notable directo y no dejar indiferente a nadie."
+            </div>
+
+            <p>
+                Tras la excelente acogida de nuestro material reciente (como el single <em>"RUIDO"</em>), estamos cerrando fechas para la próxima temporada y nos encantaría formar parte de vuestra programación. Nuestra puesta en escena es visual, enérgica y directa, ideal para conectar con el público desde el primer acorde.
+            </p>
+
+            <!-- VIDEO INSERTADO -->
+            <div class="video-container">
+               <video controls poster="poster_web_losmonos.webp" preload="metadata" >
+                    <source src="clip-monos-dance.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+
+            <p>Podéis oir y ver nuestro estilo aquí:</p>
+
+            <!-- CALL TO ACTION BUTTONS -->
+            <div class="video-section">
+                <a href="https://www.youtube.com/@LOSMONOS-MUSIC" class="btn" target="_blank">📺 Ver en YouTube</a>
+                <a href="https://www.instagram.com/losmonosmusic" class="btn btn-insta" target="_blank">📸 Ver &nbsp;  Instagram</a>
+            </div>
+
+            <p>
+                Quedamos a vuestra entera disposición para enviaros breve Bio, un Dossier técnico (rider) más detallado o charlar sobre disponibilidad.
+            </p>
+
+            <p>Un saludo y ¡mucho ruido!</p>
+            <p style="color: #FF4500; font-size: 1.1em; margin-bottom: 0;"><strong>LOSMONOS</strong><br>
+            <span style="font-size: 0.8em; color: #888; text-transform: uppercase; letter-spacing: 1px;">Cantabria, España</span></p>
+        </div>
+
+        <!-- FOOTER ELEGANTE -->
+        <div class="footer">
+
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@LOSMONOS-MUSIC" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/losmonosmusic" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="contact-list">
+                <!-- Teléfono -->
+                <a href="tel:+34629222322" class="contact-item">
+                    <i class="fa-solid fa-phone"></i> +34 629 222 322
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/34629222322" class="contact-item" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:thefaraonamusic@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> thefaraonamusic@gmail.com
+                </a>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 10px; opacity: 0.8; letter-spacing: 1px;">
+                © 2026 LOSMONOS MUSIC • TODOS LOS DERECHOS RESERVADOS
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
