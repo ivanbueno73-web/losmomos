@@ -3,310 +3,591 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Musical - LOSMONOS Rock • Indie • Pop | Cantabria</title>
+    <title>LOSMONOS Rock • Indie • Pop | Cantabria</title>
     <link rel="preconnect" href="https://fonts.cdnfonts.com">
     <!-- Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <!-- Metadatos para redes sociales -->
     <meta property="og:title" content=" LOSMONOS • Propuesta Musical">
     <meta property="og:description" content="Rock • Indie • Pop | Cantabria">
     <meta property="og:url" content="https://losmonosmusic.com">
-    <meta property="og:image" content="imagen_recortada.jpg">
-
+    <meta property="og:image" content="https://losmonosmusic.com/imagen_recortada.jpg">
     <!-- Color principal del navegador -->
     <meta name="theme-color" content="#FF4500">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
     <style>
         @import url('https://fonts.cdnfonts.com/css/lemonmilk');
-
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333333;
-            line-height: 1.6;
+            background-color: #080808;
+            background-image: radial-gradient(circle at top, #161616 0%, #080808 70%);
+            color: #e5e5e5;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            background-color: #121212;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Espaciado exterior elegante en pantallas grandes */
+        @media (min-width: 768px) {
+            .container {
+                margin: 40px auto;
+                border-radius: 12px;
+            }
         }
         .header {
             background-color: #000000;
             color: #ffffff;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
         }
         .header h1 {
             font-family: 'Lemon/Milk light', sans-serif;
             margin: 0;
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 36px);
+            letter-spacing: 4px;
+            background: linear-gradient(to right, #ffffff, #ff7a45);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(255, 69, 0, 0.15);
         }
         .header p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            color: #cccccc;
-            letter-spacing: 1px;
+            margin: 10px 0 0;
+            font-size: clamp(11px, 2.5vw, 15px);
+            color: #a3a3a3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
+        /* --- HERO IMAGE con overlay para fundido elegante --- */
         .hero-image {
             width: 100%;
             display: block;
+            position: relative;
             overflow: hidden;
             border-bottom: 4px solid #FF4500;
             line-height: 0;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            pointer-events: none;
         }
         .hero-image img {
             width: 100%;
             height: auto;
             display: block;
             object-fit: cover;
+            transition: transform 0.6s ease;
         }
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+        /* --- CONTENIDO GENERAL (SIEMPRE UNA COLUMNA) --- */
         .content {
-            padding: 40px 30px 20px 30px;
+            padding: 40px 20px;
+        }
+        /* Contenedor interno optimizado para que el texto no se extienda infinitamente */
+        .content-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .content p {
+            margin: 0 0 20px 0;
+            font-size: clamp(15px, 2vw, 17px);
+            color: #cccccc;
+        }
+        .content p strong {
+            color: #ffffff;
         }
         .intro-text {
-            font-size: 16px;
-            margin-bottom: 25px;
+            font-size: clamp(17px, 2.2vw, 19px);
+            line-height: 1.8;
+            color: #f5f5f5;
         }
+        /* Destacado elegante adaptado al modo oscuro */
         .highlight-box {
-            background-color: #fff9e6;
+            background-color: rgba(255, 69, 0, 0.05);
             border-left: 4px solid #FF4500;
-            padding: 15px;
-            margin-bottom: 25px;
-            font-style: italic;
-            color: #555;
-        }
-        .video-section {
-            text-align: center;
+            padding: 20px;
             margin: 30px 0;
+            font-style: italic;
+            color: #f0f0f0;
+            border-radius: 0 8px 8px 0;
+            font-size: clamp(15px, 2vw, 17px);
+            line-height: 1.6;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
         }
-
-        /* --- ESTILOS DE BOTONES PREMIUM --- */
-        .btn {
-            display: inline-block;
-            color: #ffffff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            margin: 8px 5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            /* Sombra profunda y borde inferior blanco sutil */
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.9);
-            filter: brightness(1.2);
-        }
-
-        .btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Colores Oscuros Brillantes Elegantes */
-        .btn-spotify {
-            background-color: #116e32; /* Verde oscuro elegante */
-        }
-
-        .btn-youtube {
-            background-color: #8b0000; /* Rojo oscuro elegante (Dark Red) */
-        }
-
-        .btn-insta {
-            background-color: #1a2a44; /* Azul oscuro elegante (Deep Navy) */
-        }
-
-        /* --- FOOTER --- */
-        .footer {
-            background-color: #111111;
-            padding: 40px 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #888888;
-            border-top: 4px solid #FF4500;
-        }
-
-        .social-icons {
-            margin-bottom: 20px;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 0 12px;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 22px;
-            transition: transform 0.2s, color 0.2s;
-        }
-
-        .social-icons a:hover {
-            color: #FF4500;
-            transform: scale(1.1);
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #333, transparent);
-            width: 80%;
-            margin: 25px auto;
-        }
-
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .contact-item {
-            color: #cccccc;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .contact-item:hover {
-            color: #ffffff;
-        }
-
-        .contact-item i {
-            color: #FF4500;
-            font-size: 16px;
-            width: 20px;
-            text-align: center;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .container { background-color: #1a1a1a; color: #e0e0e0; }
-            .header { background-color: #000; }
-            .content { color: #e0e0e0; }
-            .highlight-box { background-color: #2c2a20; border-left-color: #ffcc00; color: #e0e0e0; }
-        }
-
+        /* --- MULTIMEDIA Y VIDEO --- */
         .video-container {
             width: 100%;
-            margin: 25px 0;
-            border-radius: 4px;
+            margin: 35px auto;
+            border-radius: 8px;
             overflow: hidden;
             background-color: #000;
             line-height: 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .video-container video {
             width: 100%;
             height: auto;
             display: block;
         }
+        /* --- SECCIÓN PROPUESTA TÉCNICA Y ECONÓMICA --- */
+        .proposal-section {
+            margin: 45px 0;
+            background-color: #161616;
+            border: 1px solid rgba(255, 69, 0, 0.15);
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .proposal-section .section-title {
+            font-family: 'Lemon/Milk light', sans-serif;
+            font-size: clamp(15px, 2.2vw, 19px);
+            color: #FF4500;
+            margin: 0 0 6px 0;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .proposal-section .section-subtitle {
+            font-size: 11px;
+            color: #888888;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 30px 0;
+            font-weight: bold;
+        }
+        .proposal-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 650px) {
+            .proposal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .proposal-card.full-width {
+                grid-column: span 2;
+            }
+        }
+        .proposal-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .proposal-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 69, 0, 0.25);
+        }
+        .proposal-card.highlight-card {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.05) 0%, rgba(0,0,0,0.2) 100%);
+            border: 1px solid rgba(255, 69, 0, 0.3);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 10px;
+        }
+        .card-header i {
+            color: #FF4500;
+            font-size: 18px;
+        }
+        .card-header h3 {
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .card-body p {
+            font-size: 14px !important;
+            color: #b3b3b3 !important;
+            margin-bottom: 12px !important;
+            line-height: 1.6 !important;
+        }
+        .card-body p:last-child {
+            margin-bottom: 0 !important;
+        }
+        .card-body p strong {
+            color: #ffffff;
+        }
+        .highlight-text {
+            color: #e5e5e5;
+            font-style: italic;
+            background-color: rgba(255, 69, 0, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .cache-badge {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 69, 0, 0.15);
+            border: 1px solid rgba(255, 69, 0, 0.3);
+            padding: 12px 18px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .cache-label {
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cache-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: #FF4500;
+        }
+        .revision-text {
+            font-size: 13px !important;
+        }
+        .revision-text small {
+            display: block;
+            margin-top: 8px;
+            color: #888888;
+            line-height: 1.4;
+        }
+        /* --- BOTONES PREMIUM QUE NUNCA GENERAN DOS ALTURAS --- */
+        .btn-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin: 30px auto;
+            width: 100%;
+        }
+        /* En pantallas desde tablets (600px) en adelante, los botones se muestran lado a lado */
+        @media (min-width: 600px) {
+            .btn-wrapper {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 15px 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: clamp(11px, 1.4vw, 14px); /* Escala dinámica para evitar desbordes */
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            white-space: nowrap; /* Evita dos alturas de texto bajo cualquier circunstancia */
+            overflow: hidden;
+            text-overflow: clip;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .btn i {
+            font-size: 18px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.01);
+            color: #ffffff;
+        }
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        /* Colores Oscuros y elegantes con efectos sutiles de glow */
+        .btn-spotify {
+            background: linear-gradient(135deg, #12632d, #1ed760);
+        }
+        .btn-spotify:hover {
+            box-shadow: 0 0 22px rgba(30, 215, 96, 0.45), 0 8px 25px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.1);
+        }
+        .btn-youtube {
+            background: linear-gradient(135deg, #7c0000, #ff0000);
+        }
+        .btn-youtube:hover {
+            box-shadow: 0 0 22px rgba(255, 0, 0, 0.4), 0 8px 25px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.1);
+        }
+        .btn-insta {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .btn-insta:hover {
+            box-shadow: 0 0 22px rgba(220, 39, 67, 0.45), 0 8px 25px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.08);
+        }
+        /* --- FOOTER --- */
+        .footer {
+            background-color: #0b0b0b;
+            padding: 50px 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #888888;
+            border-top: 4px solid #FF4500;
+        }
+        /* Estilo promocional del footer */
+        .footer-promo {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: clamp(10px, 2.2vw, 12px);
+            font-weight: 300; /* Letra ultrafina y estilizada */
+            letter-spacing: 4px; /* Mayor espaciado para máxima elegancia */
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8); /* Blanco sutilmente atenuado */
+            margin: 0 auto 25px auto;
+            max-width: 90%;
+            text-shadow: none; /* Sin sombras para mantener la limpieza y nitidez */
+            line-height: 1.6;
+        }
+        .social-icons {
+            margin-bottom: 25px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #FF4500;
+            transform: translateY(-4px) scale(1.15);
+        }
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2c2c2c, transparent);
+            width: 80%;
+            margin: 30px auto;
+        }
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .contact-list {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .contact-item {
+                max-width: none;
+                width: auto;
+            }
+        }
+        .contact-item {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
+            max-width: 320px;
+        }
+        .contact-item:hover {
+            color: #ffffff;
+            background-color: rgba(255, 69, 0, 0.1);
+            border-color: rgba(255, 69, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .contact-item i {
+            color: #FF4500;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <!-- HEADER -->
         <div class="header">
             <h1>LOSMONOS</h1>
             <p>Rock &bull; Indie &bull; Pop | Cantabria</p>
         </div>
-
         <!-- HERO IMAGE -->
         <div class="hero-image">
-            <img src="imagen_recortada.jpg" alt="Imagén del grupo musical LOSMONOS" onerror="this.src='https://placehold.co/600x300/000000/FF4500?text=LOSMONOS+MUSIC';">
+            <img src="https://losmonosmusic.com/imagen_recortada.jpg" alt="Imagén del grupo musical LOSMONOS" onerror="this.src='https://placehold.co/600x300/000000/FF4500?text=LOSMONOS+MUSIC';">
         </div>
-
-        <!-- BODY CONTENT -->
+        <!-- BODY CONTENT (SIEMPRE UNA SOLA COLUMNA CON MÁXIMO DE LECTURA ELEGANTEDE 800PX) -->
         <div class="content">
-            <p><strong>Hola, equipo de programación / producción:</strong></p>
+            <div class="content-inner">
+                <p><strong>Hola, equipo de programación / producción:</strong></p>
+                <p class="intro-text">
+                    Os escribimos para presentaros el regreso de <strong>LOSMONOS</strong>, la banda cántabra que vuelve a los escenarios con una propuesta cargada de energía, buenas melodías y decibelios.
+                </p>
+                <div class="highlight-box">
+                    "Una mezcla potente de Rock, Indie y Pop diseñada para hacer un notable directo y no dejar indiferente a nadie."
+                </div>
+                <!-- Trayectoria y Experiencia -->
+                <h2 style="font-family: 'Lemon/Milk light', sans-serif; font-size: clamp(18px, 2.5vw, 22px); color: #FF4500; margin-top: 40px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;">Trayectoria y Experiencia</h2>
+                <p>
+                    La solidez de <strong>LOSMONOS</strong> en el escenario es el resultado de años de recorrido en la escena musical nacional. Nuestra música ha tenido presencia en los principales medios del país, sonando en emisoras de referencia como <strong>Cadena 100</strong> y <strong>Los 40 Principales</strong>, además de aparecer en canales especializados como <strong>Sol Música</strong> y <strong>40 Latinos</strong>.
+                </p>
+                <p style="margin-bottom: 35px;">
+                    Hemos creado parte de nuestra identidad en el circuito de salas más emblemático de Madrid, actuando en escenarios históricos como <strong>Honky Tonk</strong>, <strong>Sala El Sol</strong>, <strong>Clamores</strong>, <strong>Costelo</strong>, y <strong>Sala Orange (Chesterfield Café)</strong>. Además, hemos compartido cartel y escenario con referentes de nuestra música nacional como <strong>Leiva</strong>, <strong>Pereza</strong> y <strong>Quique González</strong>.
+                </p>
+                <p>
+                    Tras la excelente acogida de nuestro material reciente (como el single <em>"RUIDO"</em>), estamos cerrando fechas para esta temporada 2026 y nos encantaría formar parte de vuestra programación. Nuestra puesta en escena es visual, enérgica y directa, ideal para conectar con el público desde el primer acorde.
+                </p>
+                <!-- VIDEO INSERTADO -->
+                <div class="video-container">
+                    <video controls poster="https://losmonosmusic.com/poster_web_losmonos.webp" preload="metadata" >
+                        <source src="https://losmonosmusic.com/clip-monos-dance.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <!-- PROPUESTA TÉCNICA Y ECONÓMICA -->
+                <div class="proposal-section">
+                    <h2 class="section-title">PROPUESTA TÉCNICA Y ECONÓMICA (RIDER / DOSSIER) 2026</h2>
+                    <p class="section-subtitle">LOS MONOS | CONTRATACIÓN DIRECTA</p>
+                    <div class="proposal-grid">
+                        <!-- Card 1: Detalles del Directo -->
+                        <div class="proposal-card">
+                            <div class="card-header">
+                                <i class="fa-solid fa-guitar"></i>
+                                <h3>1. DETALLES DEL DIRECTO</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Formato:</strong> 5 músicos en escenario. Formato eléctrico, con posibilidad de adaptación a formato acústico según las necesidades del evento.</p>
+                                <p><strong>Duración del Show:</strong> 1 hora y 30 minutos de música en vivo, con un repertorio dinámico y adaptable tanto a festivales y programaciones culturales como a eventos privados o corporativos.</p>
+                            </div>
+                        </div>
+                        <!-- Card 2: Infraestructura Técnica -->
+                        <div class="proposal-card">
+                            <div class="card-header">
+                                <i class="fa-solid fa-sliders"></i>
+                                <h3>2. INFRAESTRUCTURA TÉCNICA</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Pequeños Eventos / Autonomía:</strong> Para eventos de pequeño formato, la banda dispone de equipamiento propio completo consistente en equipo de voces (P.A.), mesa de mezclas y 2 monitores.</p>
+                                <p><strong>Grandes Eventos / Necesidades de Producción:</strong> Para eventos de gran formato, festivales o escenarios de mayor concurrencia, el organizador deberá aportar la infraestructura necesaria. Para este fin, la banda requiere: <span class="highlight-text"> Microfonía completa, línea de canales (Input List), monitores adicionales, sistema de P.A. adecuado al recinto y técnico de sonido local</span>.</p>
+                            </div>
+                        </div>
+                        <!-- Card 3: Condiciones Económicas -->
+                        <div class="proposal-card highlight-card full-width">
+                            <div class="card-header">
+                                <i class="fa-solid fa-euro-sign"></i>
+                                <h3>3. CONDICIONES ECONÓMICAS</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="cache-badge">
+                                    <span class="cache-label">Caché Neto (Tarifa Base):</span>
+                                    <span class="cache-value">--- €</span>
+                                </div>
+                                <p class="revision-text"><strong>Condiciones de Revisión:</strong> Esta tarifa base está sujeta a optimización según el formato final del evento, localización geográfica, producción técnica local aportada y necesidades de 'backline'. <small>(No incluye IVA ni gastos logísticos extraordinarios si la infraestructura requerida excede el equipo estándar incluido)</small>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- DESPEDIDA Y FIRMA UBICADOS DEBAJO DEL VIDEO Y DE LA PROPUESTA -->
+                <p>
+                    Quedamos a vuestra entera disposición para enviaros breve Bio, un Dossier técnico (rider) más detallado o charlar sobre disponibilidad.
+                </p>
+                <p>Un saludo y ¡mucho ruido!</p>
+                <p style="color: #FF4500; font-size: 1.1em; margin-bottom: 35px;"><strong>LOSMONOS</strong><br>
+                <span style="font-size: 0.8em; color: #888; text-transform: uppercase; letter-spacing: 1px;">Cantabria, España</span></p>
 
-            <p class="intro-text">
-                Os escribimos para presentaros el regreso de <strong>LOSMONOS</strong>, la banda cántabra que vuelve a los escenarios con una propuesta cargada de energía, buenas melodías y decibelios.
-            </p>
-
-            <div class="highlight-box">
-                "Una mezcla potente de Rock, Indie y Pop diseñada para hacer un notable directo y no dejar indiferente a nadie."
+                <!-- NUEVA SECCIÓN DE AUDIO / VIDEO MAQUETADA COMO PROPUESTA DESTACADA -->
+                <div class="proposal-card highlight-card" style="margin-top: 40px; margin-bottom: 40px;">
+                    <div class="card-header" style="border-bottom: 1px solid rgba(255, 69, 0, 0.25); padding-bottom: 12px; margin-bottom: 20px;">
+                        <i class="fa-solid fa-headphones"></i>
+                        <h3>PODÉIS OÍR Y VER a LOSMONOS:</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- CALL TO ACTION BUTTONS -->
+                        <div class="btn-wrapper" style="margin: 0; width: 100%;">
+                            <a href="https://open.spotify.com/intl-es/album/3nY8HV2TD9VyKAg3PCZ1IF" class="btn btn-spotify" target="_blank">
+                                <i class="fa-brands fa-spotify"></i> Escuchar en Spotify
+                            </a>
+                            <a href="https://www.youtube.com/@LOSMONOS-MUSIC" class="btn btn-youtube" target="_blank">
+                                <i class="fa-brands fa-youtube"></i> Ver en YouTube
+                            </a>
+                            <a href="https://www.instagram.com/losmonosmusic" class="btn btn-insta" target="_blank">
+                                <i class="fa-brands fa-instagram"></i> Ver Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-
-            <p>
-                Tras la excelente acogida de nuestro material reciente (como el single <em>"RUIDO"</em>), estamos cerrando fechas para  esta temporada 2026 y nos encantaría formar parte de vuestra programación. Nuestra puesta en escena es visual, enérgica y directa, ideal para conectar con el público desde el primer acorde.
-            </p>
-
-            <!-- VIDEO INSERTADO -->
-            <div class="video-container">
-                <video controls poster="poster_web_losmonos.webp" preload="metadata" >
-                    <source src="clip-monos-dance.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-            </div>
-
-            <p>Podéis oir y ver nuestro estilo aquí:</p>
-
-            <!-- CALL TO ACTION BUTTONS -->
-            <div class="video-section">
-                <a href="https://open.spotify.com/intl-es/album/3nY8HV2TD9VyKAg3PCZ1IF" class="btn btn-spotify" target="_blank">🎧 Escuchar en Spotify</a>
-                <a href="https://www.youtube.com/@LOSMONOS-MUSIC" class="btn btn-youtube" target="_blank">📺 Ver en YouTube</a>
-                <a href="https://www.instagram.com/losmonosmusic" class="btn btn-insta" target="_blank">📸 Ver &nbsp;  Instagram</a>
-            </div>
-
-            <p>
-                Quedamos a vuestra entera disposición para enviaros breve Bio, un Dossier técnico (rider) más detallado o charlar sobre disponibilidad.
-            </p>
-
-            <p>Un saludo y ¡mucho ruido!</p>
-            <p style="color: #FF4500; font-size: 1.1em; margin-bottom: 0;"><strong>LOSMONOS</strong><br>
-            <span style="font-size: 0.8em; color: #888; text-transform: uppercase; letter-spacing: 1px;">Cantabria, España</span></p>
         </div>
-
         <!-- FOOTER ELEGANTE -->
         <div class="footer">
-
+            <!-- Mensaje promocional e indicativo de disponibilidad -->
+            <p class="footer-promo">Sigue a LOSMONOS, YA DISPONIBLE EN TODAS LAS PLATAFORMAS</p>
             <div class="social-icons">
                 <a href="https://open.spotify.com/intl-es/album/3nY8HV2TD9VyKAg3PCZ1IF" title="Spotify" target="_blank"><i class="fa-brands fa-spotify"></i></a>
                 <a href="https://www.youtube.com/@LOSMONOS-MUSIC" title="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://www.instagram.com/losmonosmusic" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://music.apple.com/us/album/losmonos/1892163406" title="Apple Music" target="_blank"><i class="fa-brands fa-apple"></i></a>
+                <a href="https://music.amazon.es/albums/B0GWGW75LK" title="Amazon Music" target="_blank"><i class="fa-brands fa-amazon"></i></a>
             </div>
-
             <div class="footer-divider"></div>
-
             <div class="contact-list">
                 <!-- Teléfono -->
                 <a href="tel:+34629222322" class="contact-item">
                     <i class="fa-solid fa-phone"></i> +34 629 222 322
                 </a>
-
                 <!-- WhatsApp -->
                 <a href="https://wa.me/34629222322" class="contact-item" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
                 </a>
-
-                <!-- Email -->
-                <a href="mailto:thefaraonamusic@gmail.com" class="contact-item">
-                    <i class="fa-solid fa-envelope"></i> thefaraonamusic@gmail.com
+                <!-- Email (Actualizado) -->
+                <a href="mailto:info@losmonosmusic.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> info@losmonosmusic.com
                 </a>
             </div>
-
-            <p style="margin-top: 30px; font-size: 10px; opacity: 0.8; letter-spacing: 1px;">
+            <p style="margin-top: 40px; font-size: 10px; opacity: 0.6; letter-spacing: 1px;">
                 © 2026 LOSMONOS MUSIC • TODOS LOS DERECHOS RESERVADOS
             </p>
         </div>
     </div>
-
 </body>
 </html>
